@@ -15,8 +15,9 @@
 		<vm:MainWindowViewModel/>
 	</Design.DataContext>
 
-	<Grid>
-	    <Button Content="Zaloguj" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+	<Grid RowDefinitions="* *">
+	    <Label Grid.Row="0" Classes="logo" Content="Connector"/>
+		<Button Grid.Row="1" Classes="button-welcome" Content="Zaloguj"/>
 	</Grid>
 
 </Window>

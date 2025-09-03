@@ -16,6 +16,7 @@
 
 	<Application.Resources>
 		<SolidColorBrush x:Key="Background">#EAEAF0</SolidColorBrush>
+		<FontFamily x:Key="Syne">/Assets/Fonts/Syne.ttf#Syne</FontFamily>
 	</Application.Resources>
 	
 </Application>

@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Maksio\\Connector\\Connector\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{37661F0C-F7A5-41DB-AAB1-70E8BD33B5A4}|Connector.csproj|c:\\users\\maksio\\connector\\connector\\styles\\defaultstyles.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "RelativeMoniker": "D:0:0:{37661F0C-F7A5-41DB-AAB1-70E8BD33B5A4}|Connector.csproj|solutionrelative:styles\\defaultstyles.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{37661F0C-F7A5-41DB-AAB1-70E8BD33B5A4}|Connector.csproj|c:\\users\\maksio\\connector\\connector\\app.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{37661F0C-F7A5-41DB-AAB1-70E8BD33B5A4}|Connector.csproj|solutionrelative:app.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{37661F0C-F7A5-41DB-AAB1-70E8BD33B5A4}|Connector.csproj|c:\\users\\maksio\\connector\\connector\\views\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{37661F0C-F7A5-41DB-AAB1-70E8BD33B5A4}|Connector.csproj|solutionrelative:views\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{37661F0C-F7A5-41DB-AAB1-70E8BD33B5A4}|Connector.csproj|c:\\users\\maksio\\connector\\connector\\styles\\defaultstyles.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
-      "RelativeMoniker": "D:0:0:{37661F0C-F7A5-41DB-AAB1-70E8BD33B5A4}|Connector.csproj|solutionrelative:styles\\defaultstyles.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{37661F0C-F7A5-41DB-AAB1-70E8BD33B5A4}|Connector.csproj|c:\\users\\maksio\\connector\\connector\\viewmodels\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,11 +26,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "DefaultStyles.axaml",
               "DocumentMoniker": "C:\\Users\\Maksio\\Connector\\Connector\\Styles\\DefaultStyles.axaml",
               "RelativeDocumentMoniker": "Styles\\DefaultStyles.axaml",
@@ -42,7 +42,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "App.axaml",
               "DocumentMoniker": "C:\\Users\\Maksio\\Connector\\Connector\\App.axaml",
               "RelativeDocumentMoniker": "App.axaml",
@@ -54,7 +54,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MainWindow.axaml",
               "DocumentMoniker": "C:\\Users\\Maksio\\Connector\\Connector\\Views\\MainWindow.axaml",
               "RelativeDocumentMoniker": "Views\\MainWindow.axaml",
@@ -74,8 +74,7 @@
               "RelativeToolTip": "ViewModels\\MainWindowViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T09:15:33.992Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T09:15:33.992Z"
             }
           ]
         }
