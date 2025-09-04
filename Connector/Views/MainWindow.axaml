@@ -6,7 +6,7 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Connector.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/avalonia-logo.ico"
+        Icon="/Assets/icon.ico"
         Title="Connector">
 
 	<Design.DataContext>
@@ -16,7 +16,7 @@
 	</Design.DataContext>
 
 	<Grid RowDefinitions="* *">
-	    <Label Grid.Row="0" Classes="logo" Content="Connector"/>
+		<Image Grid.Row="0" Classes="logo-welcome" Source="{SvgImage /Assets/Images/Logo-Full.svg}"></Image>
 		<Button Grid.Row="1" Classes="button-welcome" Content="Zaloguj"/>
 	</Grid>
 

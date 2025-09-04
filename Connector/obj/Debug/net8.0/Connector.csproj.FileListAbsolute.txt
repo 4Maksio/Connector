@@ -135,3 +135,10 @@ C:\Users\Maksio\Connector\Connector\obj\Debug\net8.0\refint\Connector.dll
 C:\Users\Maksio\Connector\Connector\obj\Debug\net8.0\Connector.pdb
 C:\Users\Maksio\Connector\Connector\obj\Debug\net8.0\Connector.genruntimeconfig.cache
 C:\Users\Maksio\Connector\Connector\obj\Debug\net8.0\ref\Connector.dll
+C:\Users\Maksio\Connector\Connector\bin\Debug\net8.0\Avalonia.Svg.Skia.dll
+C:\Users\Maksio\Connector\Connector\bin\Debug\net8.0\ExCSS.dll
+C:\Users\Maksio\Connector\Connector\bin\Debug\net8.0\ShimSkiaSharp.dll
+C:\Users\Maksio\Connector\Connector\bin\Debug\net8.0\SkiaSharp.HarfBuzz.dll
+C:\Users\Maksio\Connector\Connector\bin\Debug\net8.0\Svg.Custom.dll
+C:\Users\Maksio\Connector\Connector\bin\Debug\net8.0\Svg.Model.dll
+C:\Users\Maksio\Connector\Connector\bin\Debug\net8.0\Svg.Skia.dll

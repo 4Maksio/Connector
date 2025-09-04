@@ -2,7 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Design.PreviewWith>
     <Border Padding="100">
-		<Label Grid.Row="0" Classes="logo" Content="Connector"/>
+		<Image Grid.Row="0" Classes="logo-welcome" Source="{SvgImage /Assets/Images/Logo-Full.svg}"></Image>
     </Border>
   </Design.PreviewWith>
 
@@ -21,9 +21,8 @@
 		<Setter Property="VerticalAlignment" Value="Center"/>
 	</Style>
 
-	<Style Selector="Label.logo">
-		<Setter Property="FontSize" Value="40"/>
-		<Setter Property="FontWeight" Value="Bold"/>
+	<Style Selector="Image.logo-welcome">
+		<Setter Property="Width" Value="500"/>
 		<Setter Property="HorizontalAlignment" Value="Center"/>
 		<Setter Property="VerticalAlignment" Value="Center"/>
 	</Style>
