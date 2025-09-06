@@ -5,7 +5,6 @@ using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
 using Connector.ViewModels;
-using Connector.Views;
 
 namespace Connector
 {
@@ -25,7 +24,7 @@ namespace Connector
                 DisableAvaloniaDataAnnotationValidation();
                 desktop.MainWindow = new LoginWindow
                 {
-                    DataContext = new MainWindowViewModel(),
+                    DataContext = new LoginWindowViewModel(),
                 };
             }
 
