@@ -1,5 +1,7 @@
 # Connector (PL)
 
-Pierwszy prototyp ma uruchomić aplikację i zrobić parę podstawowych czynności. Testy akceptacyjne są w arkuszu kalkulacyjnym. Poruszam się w nieznanym mi frameworku z prawie zerowym doświadczeniem związanym z MVVM.
+Aplikacja MVVM tworzona w .Net 8.0 przy uzyciu frameworka Avalonia UI
 
-Będzie zabawnie
+## Prototyp 1 [w trakcie produkcji]
+
+Ekran poczatkowy zawiera logo oraz przycisk do logowania...

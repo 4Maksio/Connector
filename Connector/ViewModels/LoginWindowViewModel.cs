@@ -1,6 +1,6 @@
 ﻿namespace Connector.ViewModels
 {
-    internal class LoginWindowViewModel
+    internal class LoginWindowViewModel : ViewModelBase
     {
     }
 }

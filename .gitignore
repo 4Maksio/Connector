@@ -1,2 +1,4 @@
 .vs/
 Connector.zip
+**/bin/
+**/obj/
