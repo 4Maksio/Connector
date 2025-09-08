@@ -16,6 +16,6 @@
 
 	<Grid RowDefinitions="* *">
 		<Image Grid.Row="0" Classes="logo-welcome" Source="{SvgImage /Assets/Images/Logo-Full.svg}"></Image>
-		<Button Grid.Row="1" Classes="button-welcome" Content="Zaloguj"/>
+		<Button Grid.Row="1" Name="LoginButton" Classes="button-welcome" Content="{Binding LoginButtonText}" Command="{Binding LoginButtonClick}"/>
 	</Grid>
 </Window>
