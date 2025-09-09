@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace Connector;
 
-public partial class ApplicationWindow : Window
+public partial class MainWindow : Window
 {
-    public ApplicationWindow()
+    public MainWindow()
     {
         InitializeComponent();
     }
