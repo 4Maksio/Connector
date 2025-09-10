@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Connector.ViewModels
 {
-    internal class DashboardViewModel
+    internal class DashboardViewModel : ViewModelBase
     {
     }
 }

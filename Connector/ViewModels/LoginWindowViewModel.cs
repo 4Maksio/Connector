@@ -8,7 +8,7 @@ namespace Connector.ViewModels
 
         public string LoginButtonText
         {
-            get { return _loginButtonText; }
+            get => _loginButtonText;
             set { _loginButtonText = value; }
         }
 
