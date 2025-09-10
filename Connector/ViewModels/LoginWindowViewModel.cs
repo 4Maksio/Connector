@@ -1,5 +1,4 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-
+﻿
 namespace Connector.ViewModels
 {
     internal class LoginWindowViewModel : ViewModelBase
@@ -9,7 +8,7 @@ namespace Connector.ViewModels
         public string LoginButtonText
         {
             get => _loginButtonText;
-            set { _loginButtonText = value; }
+            set => SetProperty(ref _loginButtonText, value);
         }
 
         public void LoginButtonClick()
