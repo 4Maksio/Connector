@@ -6,7 +6,8 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Connector.MainWindow"
         x:DataType="vm:MainWindowViewModel"
-        Title="MainWindow">
+        Icon="/Assets/icon.ico"
+        Title="Connector">
 	
 	<ContentControl Content="{Binding CurrentView}" />
 </Window>

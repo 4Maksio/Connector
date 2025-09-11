@@ -2,11 +2,11 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace Connector;
+namespace Connector.Views;
 
-public partial class Dashboard : Window
+public partial class LoginWindowView : UserControl
 {
-    public Dashboard()
+    public LoginWindowView()
     {
         InitializeComponent();
     }

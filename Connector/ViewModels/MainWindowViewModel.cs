@@ -1,10 +1,10 @@
-﻿
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+
 namespace Connector.ViewModels
 {
     internal class MainWindowViewModel : ViewModelBase
     {
         private ViewModelBase _currentView;
-
         public ViewModelBase CurrentView
         {
             get => _currentView;
@@ -13,7 +13,9 @@ namespace Connector.ViewModels
 
         public MainWindowViewModel()
         {
-            CurrentView = new LoginWindowViewModel();
+            CurrentView = new LoginWindowViewModel(OnLoginSuccess);
         }
+
+        private void OnLoginSuccess() => CurrentView = new DashboardViewModel();
     }
 }

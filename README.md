@@ -4,4 +4,4 @@ Aplikacja MVVM tworzona w .Net 8.0 przy uzyciu frameworka Avalonia UI
 
 ## Prototyp 1 [w trakcie produkcji]
 
-Ekran poczatkowy zawiera logo oraz przycisk do logowania...
+Okno wyświetla ekran logowania, który zawiera logo oraz przycisk, który przenosi użytkownika na dashboard.
