@@ -8,13 +8,17 @@
              x:DataType="vm:DashboardViewModel">
 	<Grid RowDefinitions="auto *" ColumnDefinitions="auto *" ShowGridLines="True">
 		<StackPanel Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="5">
-			<Label>Górny pasek</Label>
+			<Button>
+				<Image Height="24" Source="{SvgImage /Assets/Images/Sidebar-Toggle.svg}"/>
+			</Button>
+			<Image Height="26" Source="{SvgImage /Assets/Images/Logo-Full.svg}"/>
 		</StackPanel>
 		<StackPanel Grid.Row="1" Orientation="Vertical" Spacing="5">
-			<Label>Lewo</Label>
+			<Button>
+				<Image Height="12" Source="{SvgImage /Assets/Images/Add-Object.svg}"/>
+			</Button>
 		</StackPanel>
 		<StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" Spacing="5">
-			<Label>Reszta</Label>
 		</StackPanel>
 	</Grid>
 </UserControl>
