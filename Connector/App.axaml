@@ -17,6 +17,9 @@
 	<Application.Resources>
 		<SolidColorBrush x:Key="Background">#EAEAF0</SolidColorBrush>
 		<FontFamily x:Key="Syne">/Assets/Fonts/Syne.ttf#Syne</FontFamily>
+		<Color x:Key="Gradient-Light">#EFEFEF</Color>
+		<Color x:Key="Gradient-Mid">#DFDFDF</Color>
+		<Color x:Key="Gradient-Dark">#AAAAAA</Color>
 	</Application.Resources>
 	
 </Application>
