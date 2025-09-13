@@ -1,12 +1,16 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Design.PreviewWith>
-		<StackPanel Classes="top-bar" Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="5">
-			<Button Classes="navigation">
-				<Image Source="{SvgImage /Assets/Images/Sidebar-Toggle.svg}"/>
-			</Button>
-			<Image Height="26" Source="{SvgImage /Assets/Images/Logo-Full.svg}"/>
-		</StackPanel>
+	  <Border Grid.Row="1" Classes="left-bar">
+		  <StackPanel Orientation="Vertical" Spacing="5">
+			  <Button Classes="navigation">
+				  <StackPanel Orientation="Horizontal">
+					  <Image Classes="control" Source="{SvgImage /Assets/Images/Add-Object.svg}"/>
+					  <Label>Dodaj element</Label>
+				  </StackPanel>
+			  </Button>
+		  </StackPanel>
+	  </Border>
   </Design.PreviewWith>
 
 	<Style Selector="Window">
@@ -35,7 +39,7 @@
 		<Setter Property="Padding" Value="4"/>
 	</Style>
 
-	<Style Selector="Button.navigation > Image">
+	<Style Selector="Image.control">
 		<Setter Property="Height" Value="24"/>
 	</Style>
 
@@ -47,6 +51,17 @@
 				<GradientStop Color="{DynamicResource ResourceKey=Gradient-Dark}" Offset="1"/>
 			</LinearGradientBrush>
 		</Setter>
+	</Style>
+
+	<Style Selector="Border.left-bar">
+		<Setter Property="Background">
+			<LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+				<GradientStop Color="{DynamicResource ResourceKey=Gradient-Mid}" Offset="0"/>
+				<GradientStop Color="{DynamicResource ResourceKey=Gradient-Light}" Offset="1"/>
+			</LinearGradientBrush>
+		</Setter>
+		<Setter Property="BorderBrush" Value="{DynamicResource ResourceKey=Gradient-Dark}"/>
+		<Setter Property="BorderThickness" Value="0 0 1 0"/>
 	</Style>
 
 </Styles>
