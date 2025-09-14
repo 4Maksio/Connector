@@ -10,7 +10,7 @@
 			<Button Classes="navigation">
 				<StackPanel Orientation="Horizontal">
 					<Image Classes="control" Source="{SvgImage /Assets/Images/Add-Object.svg}"/>
-					<Label>Dodaj element</Label>
+					<Label Content="Dodaj element" Classes.hidden="{Binding IsHidden}"/>
 				</StackPanel>
 			</Button>
 		</StackPanel>
