@@ -44,7 +44,7 @@
 		</Setter>
 	</Style>
 
-	<Style Selector="Border.left-bar">
+	<Style Selector="Border.left-panel">
 		<Setter Property="Background">
 			<LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
 				<GradientStop Color="{DynamicResource ResourceKey=Gradient-Mid}" Offset="0"/>

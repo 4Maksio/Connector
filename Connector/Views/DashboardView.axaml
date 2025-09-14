@@ -7,23 +7,8 @@
 			 x:Class="Connector.Views.DashboardView"
              x:DataType="vm:DashboardViewModel">
 	<Grid RowDefinitions="auto *" ColumnDefinitions="auto *">
-		<StackPanel Classes="top-bar" Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="5">
-			<Button Classes="navigation">
-				<Image Classes="control" Source="{SvgImage /Assets/Images/Sidebar-Toggle.svg}"/>
-			</Button>
-			<Image Height="26" Source="{SvgImage /Assets/Images/Logo-Full.svg}"/>
-		</StackPanel>
-		<Border Grid.Row="1" Classes="left-bar">
-			<StackPanel Orientation="Vertical" Spacing="2">
-				<Button Classes="navigation">
-					<StackPanel Orientation="Horizontal">
-						<Image Classes="control" Source="{SvgImage /Assets/Images/Add-Object.svg}"/>
-						<Label>Dodaj element</Label>
-					</StackPanel>
-				</Button>
-			</StackPanel>
-		</Border>
-		<StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
-		</StackPanel>
+		<ContentControl Grid.ColumnSpan="2" Content="{Binding TopBar}"/>
+		<ContentControl Grid.Row="1" Content="{Binding LeftPanel}"/>
+		<ContentControl Grid.Column="1" Grid.Row="1" Content="{Binding Canva}"/>
 	</Grid>
 </UserControl>
