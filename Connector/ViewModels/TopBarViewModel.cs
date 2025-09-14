@@ -15,7 +15,6 @@ namespace Connector.ViewModels
         {
             ToggleLeftPanel = new RelayCommand(() =>
             {
-                // tu walidacja hasła
                 toggleLeftPanelVisibility?.Invoke();
             });
         }

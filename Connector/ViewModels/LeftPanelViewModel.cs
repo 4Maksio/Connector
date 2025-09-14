@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using DynamicData;
 
 namespace Connector.ViewModels
@@ -13,8 +14,14 @@ namespace Connector.ViewModels
         [ObservableProperty]
         private bool _isHidden;
 
-        public LeftPanelViewModel()
+        public IRelayCommand AddBasicItem { get; }
+        public LeftPanelViewModel(Action clickAddButton)
         {
+            AddBasicItem = new RelayCommand(() =>
+            {
+                Console.WriteLine("Kliknięto przycisk i aktywowano funkcję");
+                clickAddButton?.Invoke();
+            });
             IsHidden = false;
         }
         public void SwapVisibility() => IsHidden = !IsHidden;

@@ -3,21 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
 using Connector.Views;
 
 namespace Connector.ViewModels
 {
-    internal class DashboardViewModel : ViewModelBase
+    internal partial class DashboardViewModel : ViewModelBase
     {
-        private ViewModelBase _leftPanel = new LeftPanelViewModel();
+        [ObservableProperty]
+        private ViewModelBase _leftPanel;
+        [ObservableProperty]
         private ViewModelBase _topBar;
+        [ObservableProperty]
         private ViewModelBase _canva = new CanvaViewModel();
-        public ViewModelBase TopBar => _topBar;
-        public ViewModelBase LeftPanel => _leftPanel;
-        public ViewModelBase Canva => _canva;
         public DashboardViewModel()
         {
-            _topBar = new TopBarViewModel(((LeftPanelViewModel)LeftPanel).SwapVisibility);
+            LeftPanel = new LeftPanelViewModel(((CanvaViewModel)Canva).AddBasicItem);
+            TopBar = new TopBarViewModel(((LeftPanelViewModel)LeftPanel).SwapVisibility);
         }
     }
 }

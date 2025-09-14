@@ -2,7 +2,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-			 x:Class="Connector.Views.CanvaView"
 			 xmlns:vm="using:Connector.ViewModels"
-             x:DataType="vm:CanvaViewModel">
+			 xmlns:m="using:Connector.Models"
+			 x:Class="Connector.Views.CanvaView"
+			 x:DataType="vm:CanvaViewModel">
+	<StackPanel>
+		<ItemsControl ItemsSource="{Binding BasicItems}">
+			<ItemsControl.ItemTemplate>
+				<DataTemplate DataType="m:BasicItem">
+					<Border Margin="10" Height="50" Width="100" Background="BlueViolet">
+						<TextBlock Text="{Binding Name}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+					</Border>
+				</DataTemplate>
+			</ItemsControl.ItemTemplate>
+		</ItemsControl>
+	</StackPanel>
 </UserControl>

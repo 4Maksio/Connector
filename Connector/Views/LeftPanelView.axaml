@@ -7,7 +7,7 @@
              x:DataType="vm:LeftPanelViewModel">
 	<Border Grid.Row="1" Classes="left-panel">
 		<StackPanel Orientation="Vertical" Spacing="2">
-			<Button Classes="navigation">
+			<Button Classes="navigation" Command="{Binding AddBasicItem}">
 				<StackPanel Orientation="Horizontal">
 					<Image Classes="control" Source="{SvgImage /Assets/Images/Add-Object.svg}"/>
 					<Label Content="Dodaj element" Classes.hidden="{Binding IsHidden}"/>
