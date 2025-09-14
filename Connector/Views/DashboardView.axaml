@@ -14,7 +14,7 @@
 			<Image Height="26" Source="{SvgImage /Assets/Images/Logo-Full.svg}"/>
 		</StackPanel>
 		<Border Grid.Row="1" Classes="left-bar">
-			<StackPanel Orientation="Vertical" Spacing="5">
+			<StackPanel Orientation="Vertical" Spacing="2">
 				<Button Classes="navigation">
 					<StackPanel Orientation="Horizontal">
 						<Image Classes="control" Source="{SvgImage /Assets/Images/Add-Object.svg}"/>

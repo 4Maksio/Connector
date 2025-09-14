@@ -1,16 +1,7 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Design.PreviewWith>
-	  <Border Grid.Row="1" Classes="left-bar">
-		  <StackPanel Orientation="Vertical" Spacing="5">
-			  <Button Classes="navigation">
-				  <StackPanel Orientation="Horizontal">
-					  <Image Classes="control" Source="{SvgImage /Assets/Images/Add-Object.svg}"/>
-					  <Label>Dodaj element</Label>
-				  </StackPanel>
-			  </Button>
-		  </StackPanel>
-	  </Border>
+	  <Label Classes="hidden">Dodaj element</Label>
   </Design.PreviewWith>
 
 	<Style Selector="Window">
@@ -64,4 +55,8 @@
 		<Setter Property="BorderThickness" Value="0 0 1 0"/>
 	</Style>
 
+	<Style Selector="Label.hidden">
+		<Setter Property="IsVisible" Value="False"/>
+	</Style>
+	
 </Styles>
