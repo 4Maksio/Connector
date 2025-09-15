@@ -10,7 +10,14 @@
 			<Button Classes="navigation" Command="{Binding AddBasicItem}">
 				<StackPanel Orientation="Horizontal">
 					<Image Classes="control" Source="{SvgImage /Assets/Images/Add-Object.svg}"/>
-					<Label Content="Dodaj element" Classes.hidden="{Binding IsHidden}"/>
+					<Label Content="Dodaj element" Classes.hidden="{Binding IsHidden}">
+						<Label.Transitions>
+							<Transitions>
+								<DoubleTransition Property="MaxWidth" Duration="0:0:0.3"/>
+								<DoubleTransition Property="Opacity" Duration="0:0:0.3"/>
+							</Transitions>
+						</Label.Transitions>
+					</Label>
 				</StackPanel>
 			</Button>
 		</StackPanel>

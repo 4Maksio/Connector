@@ -62,10 +62,6 @@
 		<Setter Property="BorderThickness" Value="0 0 1 0"/>
 	</Style>
 
-	<Style Selector="Label.hidden">
-		<Setter Property="IsVisible" Value="False"/>
-	</Style>
-
 	<Style Selector="Border.object">
 		<Setter Property="Background" Value="{DynamicResource ResourceKey=Gradient-Light}"/>
 		<Setter Property="BorderBrush" Value="Beige"/>
@@ -74,6 +70,16 @@
 		<Setter Property="MinHeight" Value="100"/>
 		<Setter Property="MaxWidth" Value="250"/>
 		<Setter Property="BoxShadow" Value="4 4 12 0 Gray"/>
+	</Style>
+
+	<Style Selector="Label.hidden">
+		<Setter Property="MaxWidth" Value="0"/>
+		<Setter Property="Opacity" Value="0"/>
+	</Style>
+
+	<Style Selector="Label:not(.hidden)">
+		<Setter Property="MaxWidth" Value="200"/>
+		<Setter Property="Opacity" Value="1"/>
 	</Style>
 	
 </Styles>
