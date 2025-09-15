@@ -10,8 +10,13 @@
 		<ItemsControl ItemsSource="{Binding BasicItems}">
 			<ItemsControl.ItemTemplate>
 				<DataTemplate DataType="m:BasicItem">
-					<Border Margin="10" Height="50" Width="100" Background="BlueViolet">
-						<TextBlock Text="{Binding Name}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+					<Border Classes="object" Margin="10" Height="50">
+						<Grid RowDefinitions="auto *" ColumnDefinitions="* auto" Background="Transparent">
+							<TextBlock Grid.Column="0" Text="{Binding Name}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+							<Button Grid.Column="1" Classes="navigation">
+								<Image Classes="control" Source="{SvgImage /Assets/Images/Trash.svg}"/>
+							</Button>
+						</Grid>
 					</Border>
 				</DataTemplate>
 			</ItemsControl.ItemTemplate>

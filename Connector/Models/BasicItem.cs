@@ -12,7 +12,6 @@ namespace Connector.Models
         public BasicItem()
         {
             Name = "Default";
-            Console.WriteLine("Utworzono nowy Obiekt");
         }
     }
 }

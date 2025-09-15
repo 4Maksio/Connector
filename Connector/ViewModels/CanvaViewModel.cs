@@ -18,7 +18,6 @@ namespace Connector.ViewModels
         [RelayCommand]
         internal void AddBasicItem()
         {
-            Console.WriteLine("Zareagowała funkcja dodająca obiekt");
             BasicItems.Add(new BasicItem
             {
             });

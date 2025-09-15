@@ -1,7 +1,14 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Design.PreviewWith>
-	  <Label Classes="hidden">Dodaj element</Label>
+	  <Border Classes="object" Margin="10" Height="50">
+		  <Grid ColumnDefinitions="* auto" Background="Transparent">
+			  <TextBlock Grid.Column="0" Text="Name" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+			  <Button Grid.Column="1" Classes="navigation">
+				  <Image Classes="control" Source="{SvgImage /Assets/Images/Trash.svg}"/>
+			  </Button>
+		  </Grid>
+	  </Border>
   </Design.PreviewWith>
 
 	<Style Selector="Window">
@@ -57,6 +64,16 @@
 
 	<Style Selector="Label.hidden">
 		<Setter Property="IsVisible" Value="False"/>
+	</Style>
+
+	<Style Selector="Border.object">
+		<Setter Property="Background" Value="{DynamicResource ResourceKey=Gradient-Light}"/>
+		<Setter Property="BorderBrush" Value="Beige"/>
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="CornerRadius" Value="8"/>
+		<Setter Property="MinHeight" Value="100"/>
+		<Setter Property="MaxWidth" Value="250"/>
+		<Setter Property="BoxShadow" Value="4 4 12 0 Gray"/>
 	</Style>
 	
 </Styles>

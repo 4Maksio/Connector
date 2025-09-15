@@ -19,7 +19,6 @@ namespace Connector.ViewModels
         {
             AddBasicItem = new RelayCommand(() =>
             {
-                Console.WriteLine("Kliknięto przycisk i aktywowano funkcję");
                 clickAddButton?.Invoke();
             });
             IsHidden = false;

@@ -10,6 +10,5 @@ public partial class CanvaView : UserControl
     public CanvaView()
     {
         InitializeComponent();
-        DataContext = new CanvaViewModel();
     }
 }
