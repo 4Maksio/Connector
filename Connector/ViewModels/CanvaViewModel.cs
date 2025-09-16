@@ -4,6 +4,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Avalonia;
+using Avalonia.Controls.ApplicationLifetimes;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Connector.Models;
@@ -23,9 +25,11 @@ namespace Connector.ViewModels
             });
         }
 
-        public CanvaViewModel()
+        [RelayCommand]
+        private void OpenDialog()
         {
-            AddBasicItem();
+            var dialog = new Dialog();
+            dialog.Show();
         }
     }
 }
