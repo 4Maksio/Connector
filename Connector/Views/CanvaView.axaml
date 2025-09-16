@@ -3,18 +3,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:vm="using:Connector.ViewModels"
-			 xmlns:m="using:Connector.Models"
 			 x:Class="Connector.Views.CanvaView"
 			 x:DataType="vm:CanvaViewModel">
 	<StackPanel>
-		<Button Command="{Binding OpenDialogCommand}"/>
 		<ItemsControl ItemsSource="{Binding BasicItems}">
 			<ItemsControl.ItemTemplate>
-				<DataTemplate DataType="m:BasicItem">
+				<DataTemplate>
 					<Border Classes="object" Margin="10" Height="50">
 						<Grid RowDefinitions="auto *" ColumnDefinitions="* auto" Background="Transparent">
 							<TextBlock Grid.Column="0" Text="{Binding Name}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-							<Button Grid.Column="1" Classes="navigation" Command="">
+							<Button Grid.Column="1" Classes="navigation"
+                                    Command="{Binding $parent[UserControl].DataContext.OpenDialogCommand}"
+                                    CommandParameter="{Binding}">
 								<Image Classes="control" Source="{SvgImage /Assets/Images/Trash.svg}"/>
 							</Button>
 						</Grid>
