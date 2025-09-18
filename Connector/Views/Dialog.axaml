@@ -3,13 +3,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="250" d:DesignHeight="120"
+        Width="250"
+        Height="120"
+        SizeToContent="WidthAndHeight"
         xmlns:vm="using:Connector.ViewModels"
         x:Class="Connector.Dialog"
         x:DataType="vm:DialogViewModel"
         Title="Czy jesteś pewien?">
 	<Grid RowDefinitions="* auto" ColumnDefinitions="* *">
 		<Label Grid.ColumnSpan="2" Content="MSG"/>
-		<Label Grid.Row="1" Content="TAK"/>
-		<Label Grid.Column="1" Grid.Row="1" Content="NIE"/>
+		<Button Classes="dialog" Grid.Row="1" Content="TAK"/>
+		<Button Classes="dialog" Grid.Column="1" Grid.Row="1" Content="NIE"/>
 	</Grid>
 </Window>
