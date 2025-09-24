@@ -1,14 +1,11 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Design.PreviewWith>
-	  <Border Classes="object" Margin="10" Height="50">
-		  <Grid ColumnDefinitions="* auto" Background="Transparent">
-			  <TextBlock Grid.Column="0" Text="Name" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-			  <Button Grid.Column="1" Classes="navigation">
-				  <Image Classes="control" Source="{SvgImage /Assets/Images/Trash.svg}"/>
-			  </Button>
-		  </Grid>
-	  </Border>
+	  <Grid RowDefinitions="* auto" ColumnDefinitions="* *">
+		  <Label Grid.ColumnSpan="2" Content="Name"/>
+		  <Button Classes="dialog" Grid.Row="1" Content="Potwierdź"/>
+		  <Button Classes="dialog" Grid.Column="1" Grid.Row="1" Content="Anuluj"/>
+	  </Grid>
   </Design.PreviewWith>
 
 	<Style Selector="Window">
@@ -85,6 +82,16 @@
 	<Style Selector="Button.dialog">
 		<Setter Property="HorizontalAlignment" Value="Center"/>
 		<Setter Property="VerticalAlignment" Value="Center"/>
+	</Style>
+
+	<Style Selector="Button.dialog, Label.dialog">
+		<Setter Property="HorizontalAlignment" Value="Center"/>
+		<Setter Property="VerticalAlignment" Value="Center"/>
+	</Style>
+
+	<Style Selector="Button.dialog">
+		<Setter Property="Margin" Value="0 5 0 5"/>
+		<Setter Property="Width" Value="100"/>
 	</Style>
 	
 </Styles>

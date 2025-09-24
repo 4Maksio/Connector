@@ -2,17 +2,23 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="250" d:DesignHeight="120"
-        Width="250"
-        Height="120"
-        SizeToContent="WidthAndHeight"
+        mc:Ignorable="d" d:DesignWidth="250" d:DesignHeight="150"
+        Height="150"
+		Width="250"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="NoChrome"
+        CanResize="False"
+		Topmost="True"
         xmlns:vm="using:Connector.ViewModels"
         x:Class="Connector.Dialog"
-        x:DataType="vm:DialogViewModel"
-        Title="Czy jesteś pewien?">
+        x:DataType="vm:DialogViewModel">
 	<Grid RowDefinitions="* auto" ColumnDefinitions="* *">
-		<Label Grid.ColumnSpan="2" Content="MSG"/>
-		<Button Classes="dialog" Grid.Row="1" Content="TAK"/>
-		<Button Classes="dialog" Grid.Column="1" Grid.Row="1" Content="NIE"/>
+		<Label Classes="dialog" Grid.ColumnSpan="2" Content="{Binding Message}"/>
+		<Button Classes="dialog" Grid.Row="1" Command="{Binding Close}">
+			<Label Classes="dialog" Content="{Binding ConfirmText}"/>
+		</Button>
+		<Button Classes="dialog" Grid.Column="1" Grid.Row="1" Command="{Binding Close}">
+			<Label Classes="dialog" Content="{Binding CancelText}"/>
+		</Button>
 	</Grid>
 </Window>
