@@ -26,17 +26,16 @@ namespace Connector.ViewModels
         }
 
         [RelayCommand]
-        private void OpenDialog()
+        private async Task OpenDialog()
         {
-            Console.WriteLine("Spróbowano otworzyć Dialog. DialogViewModel.IsOpen= "+DialogViewModel.IsOpen);
             if (DialogViewModel.IsOpen)
-            {
-                Console.WriteLine("Pominięto tworzenie dialogu");
                 return;
-            }
-            Console.WriteLine("Rozpoczęto tworzenie dialogu");
-            var dialog = new Dialog();
+            TaskCompletionSource<bool> awaitingConfirmation = new TaskCompletionSource<bool>();
+            Dialog dialog = new Dialog(awaitingConfirmation);
             dialog.Show();
+
+            bool result = await awaitingConfirmation.Task;
+            Console.WriteLine(result);
         }
     }
 }

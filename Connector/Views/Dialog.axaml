@@ -14,10 +14,10 @@
         x:DataType="vm:DialogViewModel">
 	<Grid RowDefinitions="* auto" ColumnDefinitions="* *">
 		<Label Classes="dialog" Grid.ColumnSpan="2" Content="{Binding Message}"/>
-		<Button Classes="dialog" Grid.Row="1" Command="{Binding Close}">
+		<Button Classes="dialog" Grid.Row="1" Command="{Binding ConfirmCommand}">
 			<Label Classes="dialog" Content="{Binding ConfirmText}"/>
 		</Button>
-		<Button Classes="dialog" Grid.Column="1" Grid.Row="1" Command="{Binding Close}">
+		<Button Classes="dialog" Grid.Column="1" Grid.Row="1" Command="{Binding CancelCommand}">
 			<Label Classes="dialog" Content="{Binding CancelText}"/>
 		</Button>
 	</Grid>

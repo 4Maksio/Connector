@@ -9,27 +9,33 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace Connector.ViewModels
 {
-    internal partial class DialogViewModel : ViewModelBase, IDisposable
+    internal partial class DialogViewModel : ViewModelBase
     {
         [ObservableProperty] private string _message;
         [ObservableProperty] private string _confirmText = "Potwierdź";
         [ObservableProperty] private string _cancelText = "Anuluj";
         public static bool IsOpen;
         public event Action? RequestClose = () => IsOpen = false;
+        private TaskCompletionSource<bool> _task;
 
-        public DialogViewModel(string message = "Default")
+        public DialogViewModel(TaskCompletionSource<bool> task, string message)
         {
             IsOpen = true;
             Message = message;
-            Console.WriteLine("Stworzono dialog. Stan IsOpen= "+IsOpen);
+            _task = task;
         }
-
-        public void Dispose()
+        [RelayCommand]
+        public void Confirm()
         {
-            IsOpen = false;
-            Console.WriteLine("Zniszczono dialog. Stan IsOpen= "+IsOpen);
+            _task.TrySetResult(true);
+            Close();
         }
-
+        [RelayCommand]
+        public void Cancel()
+        {
+            _task.TrySetResult(false);
+            Close();
+        }
         [RelayCommand]
         public void Close() => RequestClose?.Invoke();
     }

@@ -1,0 +1,1 @@
+dotnet run --project C:\Users\Maksio\Connector\Connector\ConnectorConsole.csproj
