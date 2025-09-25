@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Connector.Models
 {
-    internal class BasicItem
+    internal partial class BasicItem : ObservableObject
     {
-        public string Name { get; set; }
+        [ObservableProperty]
+        public string _name;
         public BasicItem()
         {
             Name = "Default";

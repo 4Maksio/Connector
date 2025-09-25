@@ -26,16 +26,21 @@ namespace Connector.ViewModels
         }
 
         [RelayCommand]
-        private async Task OpenDialog()
+        private async Task OpenDialog(BasicItem item)
         {
-            if (DialogViewModel.IsOpen)
+            string tmpName = item.Name;
+            item.Name = "Dedicated to trash";
+            if(DialogViewModel.IsOpen)
                 return;
             TaskCompletionSource<bool> awaitingConfirmation = new TaskCompletionSource<bool>();
             Dialog dialog = new Dialog(awaitingConfirmation);
             dialog.Show();
 
             bool result = await awaitingConfirmation.Task;
-            Console.WriteLine(result);
+            if (result)
+                BasicItems.Remove(item);
+            else
+                item.Name = tmpName;
         }
     }
 }
