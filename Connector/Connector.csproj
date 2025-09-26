@@ -7,6 +7,13 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
   </PropertyGroup>
+  
+  <PropertyGroup>
+	<AssemblyName>Connector</AssemblyName>
+	<Product>Connector</Product>
+	<Title>Connector</Title>
+	<ApplicationIcon>Assets\icon.ico</ApplicationIcon>
+  </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="Assets\Fonts\" />
