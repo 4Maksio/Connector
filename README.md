@@ -14,4 +14,4 @@ G³ówne funkcjonalnoœci
 
 - Tworzenie i usuwanie obiektów (ochrona przed przypadkowym usuniêciem)
 
-Instalator win-x64: [ConnectorSetup](https://github.com/4Maksio/Connector/blob/main/win-x64/ConnectorSetup(0.0.1).exe) (kliknij ikonê pobrania po prawej stronie ekranu)
+Instalator **win-x64**: [ConnectorSetup(0.0.1)](https://github.com/4Maksio/Connector/blob/main/win-x64/ConnectorSetup(0.0.1).exe) (kliknij ikonê pobrania po prawej stronie ekranu)
