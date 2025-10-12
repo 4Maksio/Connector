@@ -6,7 +6,7 @@
 			 x:Class="Connector.Views.LeftPanelView"
              x:DataType="vm:LeftPanelViewModel">
 	<Border Grid.Row="1" Classes="left-panel">
-		<StackPanel Orientation="Vertical" Spacing="2">
+		<StackPanel Spacing="2">
 			<Button Classes="navigation" Command="{Binding ToggleLeftPanel}">
 				<Image Classes="control" Source="{SvgImage /Assets/Images/Sidebar-Toggle.svg}"/>
 			</Button>
@@ -15,12 +15,6 @@
 				<StackPanel Orientation="Horizontal">
 					<Image Classes="control" Source="{SvgImage /Assets/Images/Add-Object.svg}"/>
 					<Label Content="Dodaj element" Classes.hidden="{Binding IsHidden}" Classes="animated"/>
-				</StackPanel>
-			</Button>
-			<Button Classes="navigation" Command="{Binding AddBasicItem}">
-				<StackPanel Orientation="Horizontal">
-					<Image Classes="control" Source="{SvgImage /Assets/Images/Connect-Object.svg}"/>
-					<Label Content="Połącz" Classes.hidden="{Binding IsHidden}" Classes="animated"/>
 				</StackPanel>
 			</Button>
 		</StackPanel>

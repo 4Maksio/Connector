@@ -13,11 +13,11 @@ namespace Connector.Models
         [ObservableProperty] private BasicItem _target;
         [ObservableProperty] private string _type;
 
-        public Relation(BasicItem source, BasicItem target)
+        public Relation(BasicItem source, BasicItem target, string type="Default")
         {
             Source = source;
             Target = target;
-            Type = "Default";
+            Type = type;
         }
     }
 }

@@ -15,7 +15,9 @@ namespace Connector.ViewModels
     internal partial class CanvaViewModel : ViewModelBase
     {
         [ObservableProperty]
-        private ObservableCollection<BasicItem> basicItems = [];
+        private ObservableCollection<BasicItem> _basicItems = [];
+        [ObservableProperty]
+        private ObservableCollection<Relation> _relations = [];
 
         [RelayCommand]
         internal void AddBasicItem()
@@ -23,6 +25,18 @@ namespace Connector.ViewModels
             BasicItems.Add(new BasicItem
             {
             });
+        }
+        [RelayCommand]
+        internal void ConnectTo()
+        {
+            // TODO: stworzyć pomost między View a CreateRelation()
+            // NOTE: kliknięcie ponownie anuluje akcję
+            // NOTE: kliknięcie BasicItem'u powoduje wywołanie CreateRelation dla przycisku wywołującego oraz kliniętego przycisku, jeśli jest inny niż przycisk wywołujący.
+        }
+
+        public void CreateRelation(ref BasicItem source, ref BasicItem target, string type)
+        {
+            Relations.Add(new Relation(source, target, type));
         }
 
         [RelayCommand]

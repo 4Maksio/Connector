@@ -12,11 +12,18 @@
 					<Border Classes="object" Margin="10" Height="50">
 						<Grid RowDefinitions="auto *" ColumnDefinitions="* auto" Background="Transparent">
 							<TextBlock Grid.Column="0" Text="{Binding Name}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-							<Button Grid.Column="1" Classes="navigation"
-                                    Command="{Binding $parent[UserControl].DataContext.OpenDialogCommand}"
-                                    CommandParameter="{Binding}">
-								<Image Classes="control" Source="{SvgImage /Assets/Images/Trash.svg}"/>
-							</Button>
+							<StackPanel Grid.Column="1" Orientation="Horizontal">
+								<Button Classes="in-card"
+										Command="{Binding $parent[UserControl].DataContext.ConnectToCommand}"
+										CommandParameter="{Binding}">
+									<Image Classes="control" Source="{SvgImage /Assets/Images/Connect-Object.svg}"/>
+								</Button>
+								<Button Classes="in-card"
+										Command="{Binding $parent[UserControl].DataContext.OpenDialogCommand}"
+										CommandParameter="{Binding}">
+									<Image Classes="control" Source="{SvgImage /Assets/Images/Trash.svg}"/>
+								</Button>
+							</StackPanel>
 						</Grid>
 					</Border>
 				</DataTemplate>
@@ -24,3 +31,9 @@
 		</ItemsControl>
 	</StackPanel>
 </UserControl>
+
+<!--
+	TODO: stworzyć Data Template dla Relacji
+	TODO: przycisk tworzenia relacji ma się zmieniać na styl [TODO] po kliknięciu i wracać do pierwotnego stylu po ponownym kliknięciu lub zakończeniu rozpoczętego zadania
+	
+-->

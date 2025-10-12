@@ -1,19 +1,19 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Design.PreviewWith>
-			  <Button Classes="navigation">
-				  <StackPanel Orientation="Horizontal">
+	  <Border Classes="object" Margin="10" Height="50">
+		  <Grid RowDefinitions="auto *" ColumnDefinitions="* auto" Background="Transparent">
+			  <TextBlock Grid.Column="0" Text="Name" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+			  <StackPanel Grid.Column="1" Orientation="Horizontal">
+				  <Button Classes="in-card">
 					  <Image Classes="control" Source="{SvgImage /Assets/Images/Connect-Object.svg}"/>
-					  <Label Content="Dodaj element">
-						  <Label.Transitions>
-							  <Transitions>
-								  <DoubleTransition Property="Width" Duration="0:0:0.3"/>
-								  <DoubleTransition Property="Opacity" Duration="0:0:0.3"/>
-							  </Transitions>
-						  </Label.Transitions>
-					  </Label>
-				  </StackPanel>
-			  </Button>
+				  </Button>
+				  <Button Classes="in-card">
+					  <Image Classes="control" Source="{SvgImage /Assets/Images/Trash.svg}"/>
+				  </Button>
+			  </StackPanel>
+		  </Grid>
+	  </Border>
   </Design.PreviewWith>
 
 	<Style Selector="Window">
@@ -47,6 +47,11 @@
 		<Setter Property="Padding" Value="4"/>
 	</Style>
 
+	<Style Selector="Button.in-card">
+		<Setter Property="Margin" Value="5 10 5 0"/>
+		<Setter Property="Padding" Value="2"/>
+	</Style>
+	
 	<Style Selector="Image.control">
 		<Setter Property="Height" Value="24"/>
 	</Style>
@@ -112,5 +117,8 @@
 		</Setter>
 	</Style>
 
+	<!--
+		TODO: dodać styl przycisku sugerujący, że ponowne kliknięcie anuluje rozpoczętą przez niego akcję
+	-->
 
 </Styles>
