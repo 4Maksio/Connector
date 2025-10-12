@@ -10,7 +10,7 @@ namespace Connector.Models
     internal partial class BasicItem : ObservableObject
     {
         [ObservableProperty]
-        public string _name;
+        private string _name;
         public BasicItem()
         {
             Name = "Default";
