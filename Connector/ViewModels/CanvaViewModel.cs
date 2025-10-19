@@ -9,15 +9,18 @@ using Avalonia.Controls.ApplicationLifetimes;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Connector.Models;
+using ExCSS;
 
 namespace Connector.ViewModels
 {
     internal partial class CanvaViewModel : ViewModelBase
     {
-        [ObservableProperty]
-        private ObservableCollection<BasicItem> _basicItems = [];
-        [ObservableProperty]
-        private ObservableCollection<Relation> _relations = [];
+        [ObservableProperty] private ObservableCollection<BasicItem> _basicItems = [];
+        [ObservableProperty] private ObservableCollection<Relation> _relations = [];
+        [ObservableProperty] private BasicItem _selectedSource;
+        [ObservableProperty] private bool _isConnecting;
+
+        [ObservableProperty] private int _connectCount = 0;
 
         [RelayCommand]
         internal void AddBasicItem()
@@ -27,16 +30,38 @@ namespace Connector.ViewModels
             });
         }
         [RelayCommand]
-        internal void ConnectTo()
+        internal void Connect(BasicItem item)
         {
-            // TODO: stworzyć pomost między View a CreateRelation()
-            // NOTE: kliknięcie ponownie anuluje akcję
-            // NOTE: kliknięcie BasicItem'u powoduje wywołanie CreateRelation dla przycisku wywołującego oraz kliniętego przycisku, jeśli jest inny niż przycisk wywołujący.
+            if (!IsConnecting)
+            {
+                SelectedSource = item;
+                IsConnecting = true;
+                return;
+            }
+
+            if (SelectedSource == item)
+            {
+                SelectedSource = null;
+                IsConnecting = false;
+                return;
+            }
+
+            if (SelectedSource != null && item != null)
+            {
+                var sourceRef = SelectedSource;
+                var targetRef = item;
+                CreateRelation(ref sourceRef, ref targetRef, "Default");
+            }
+
+            SelectedSource = null;
+            IsConnecting = false;
         }
 
         public void CreateRelation(ref BasicItem source, ref BasicItem target, string type)
         {
+            if (source == null || target == null) return;
             Relations.Add(new Relation(source, target, type));
+            ConnectCount++;
         }
 
         [RelayCommand]

@@ -14,7 +14,7 @@
 							<TextBlock Grid.Column="0" Text="{Binding Name}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 							<StackPanel Grid.Column="1" Orientation="Horizontal">
 								<Button Classes="in-card"
-										Command="{Binding $parent[UserControl].DataContext.ConnectToCommand}"
+										Command="{Binding $parent[UserControl].DataContext.ConnectCommand}"
 										CommandParameter="{Binding}">
 									<Image Classes="control" Source="{SvgImage /Assets/Images/Connect-Object.svg}"/>
 								</Button>
@@ -29,11 +29,8 @@
 				</DataTemplate>
 			</ItemsControl.ItemTemplate>
 		</ItemsControl>
+		<Border>
+			<Label Content="{Binding ConnectCount}"/>
+		</Border>
 	</StackPanel>
 </UserControl>
-
-<!--
-	TODO: stworzyć Data Template dla Relacji
-	TODO: przycisk tworzenia relacji ma się zmieniać na styl [TODO] po kliknięciu i wracać do pierwotnego stylu po ponownym kliknięciu lub zakończeniu rozpoczętego zadania
-	
--->
