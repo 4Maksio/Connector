@@ -46,7 +46,7 @@ namespace Connector.ViewModels
                 return;
             }
 
-            if (SelectedSource != null && item != null)
+            if (SelectedSource != null && item != null && validateRelation(SelectedSource, item))
             {
                 var sourceRef = SelectedSource;
                 var targetRef = item;
@@ -80,6 +80,15 @@ namespace Connector.ViewModels
                 BasicItems.Remove(item);
             else
                 item.Name = tmpName;
+        }
+
+        private bool validateRelation(BasicItem source, BasicItem target)
+        {
+            foreach(Relation r in Relations)
+            {
+                if (r.Source == source && r.Target == target) return false;
+            }
+            return true;
         }
     }
 }
