@@ -77,18 +77,33 @@ namespace Connector.ViewModels
 
             bool result = await awaitingConfirmation.Task;
             if (result)
+            {
+                removeRelations(item);
                 BasicItems.Remove(item);
+            }
             else
                 item.Name = tmpName;
         }
 
         private bool validateRelation(BasicItem source, BasicItem target)
         {
-            foreach(Relation r in Relations)
+            foreach (Relation r in Relations)
             {
                 if (r.Source == source && r.Target == target) return false;
             }
             return true;
+        }
+        private void removeRelations(BasicItem toRemove)
+        {
+            for(int i=1; i<=Relations.Count; i++)
+            {
+                if (Relations[Relations.Count-i].Source == toRemove || Relations[Relations.Count - i].Target == toRemove)
+                {
+                    Relations.RemoveAt(Relations.Count - i);
+                    ConnectCount--;
+                    i--;
+                }
+            }
         }
     }
 }
