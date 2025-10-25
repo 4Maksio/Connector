@@ -15,9 +15,9 @@ namespace Connector.ViewModels
 {
     internal partial class CanvaViewModel : ViewModelBase
     {
-        [ObservableProperty] private ObservableCollection<BasicItem> _basicItems = [];
+        [ObservableProperty] private ObservableCollection<ObservableItem> _observableItems = [];
         [ObservableProperty] private ObservableCollection<Relation> _relations = [];
-        [ObservableProperty] private BasicItem _selectedSource;
+        [ObservableProperty] private ObservableItem? _selectedSource;
         [ObservableProperty] private bool _isConnecting;
 
         [ObservableProperty] private int _connectCount = 0;
@@ -25,24 +25,26 @@ namespace Connector.ViewModels
         [RelayCommand]
         internal void AddBasicItem()
         {
-            BasicItems.Add(new BasicItem
+            ObservableItems.Add(new ObservableItem
             {
             });
         }
         [RelayCommand]
-        internal void Connect(BasicItem item)
+        internal void Connect(ObservableItem item)
         {
             if (!IsConnecting)
             {
-                SelectedSource = item;
                 IsConnecting = true;
+                SelectedSource = item;
+                SelectedSource.IsActive = IsConnecting;
                 return;
             }
 
             if (SelectedSource == item)
             {
-                SelectedSource = null;
                 IsConnecting = false;
+                SelectedSource.IsActive = IsConnecting;
+                SelectedSource = null;
                 return;
             }
 
@@ -53,11 +55,15 @@ namespace Connector.ViewModels
                 CreateRelation(ref sourceRef, ref targetRef, "Default");
             }
 
-            SelectedSource = null;
             IsConnecting = false;
+            if (SelectedSource != null)
+            {
+                SelectedSource.IsActive = IsConnecting;
+                SelectedSource = null;
+            }
         }
 
-        public void CreateRelation(ref BasicItem source, ref BasicItem target, string type)
+        public void CreateRelation(ref ObservableItem source, ref ObservableItem target, string type)
         {
             if (source == null || target == null) return;
             Relations.Add(new Relation(source, target, type));
@@ -65,7 +71,7 @@ namespace Connector.ViewModels
         }
 
         [RelayCommand]
-        private async Task OpenDialog(BasicItem item)
+        private async Task OpenDialog(ObservableItem item)
         {
             string tmpName = item.Name;
             item.Name = "Dedicated to trash";
@@ -79,13 +85,13 @@ namespace Connector.ViewModels
             if (result)
             {
                 removeRelations(item);
-                BasicItems.Remove(item);
+                ObservableItems.Remove(item);
             }
             else
                 item.Name = tmpName;
         }
 
-        private bool validateRelation(BasicItem source, BasicItem target)
+        private bool validateRelation(ObservableItem source, ObservableItem target)
         {
             foreach (Relation r in Relations)
             {
@@ -93,7 +99,7 @@ namespace Connector.ViewModels
             }
             return true;
         }
-        private void removeRelations(BasicItem toRemove)
+        private void removeRelations(ObservableItem toRemove)
         {
             for(int i=1; i<=Relations.Count; i++)
             {

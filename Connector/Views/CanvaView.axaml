@@ -6,14 +6,15 @@
 			 x:Class="Connector.Views.CanvaView"
 			 x:DataType="vm:CanvaViewModel">
 	<StackPanel>
-		<ItemsControl ItemsSource="{Binding BasicItems}">
+		<ItemsControl ItemsSource="{Binding ObservableItems}">
 			<ItemsControl.ItemTemplate>
 				<DataTemplate>
 					<Border Classes="object" Margin="10" Height="50">
 						<Grid RowDefinitions="auto *" ColumnDefinitions="* auto" Background="Transparent">
 							<TextBlock Grid.Column="0" Text="{Binding Name}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 							<StackPanel Grid.Column="1" Orientation="Horizontal">
-								<Button Classes="in-card"
+								<Button Classes.active-button="{Binding IsActive}"
+										Classes="in-card"
 										Command="{Binding $parent[UserControl].DataContext.ConnectCommand}"
 										CommandParameter="{Binding}">
 									<Image Classes="control" Source="{SvgImage /Assets/Images/Connect-Object.svg}"/>

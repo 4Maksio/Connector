@@ -5,7 +5,7 @@
 		  <Grid RowDefinitions="auto *" ColumnDefinitions="* auto" Background="Transparent">
 			  <TextBlock Grid.Column="0" Text="Name" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 			  <StackPanel Grid.Column="1" Orientation="Horizontal">
-				  <Button Classes="in-card">
+				  <Button Classes="in-card active-button">
 					  <Image Classes="control" Source="{SvgImage /Assets/Images/Connect-Object.svg}"/>
 				  </Button>
 				  <Button Classes="in-card">
@@ -116,9 +116,12 @@
 			</Transitions>
 		</Setter>
 	</Style>
-
-	<!--
-		TODO: dodać styl przycisku sugerujący, że ponowne kliknięcie anuluje rozpoczętą przez niego akcję
-	-->
+	
+	<Style Selector="Button.active-button">
+		<Setter Property="BorderBrush" Value="#000087"/>
+		<Setter Property="BorderThickness" Value="2"/>
+		<Setter Property="Padding" Value="0"/>
+		<Setter Property="Background" Value="{DynamicResource ResourceKey=Background}"/>
+	</Style>
 
 </Styles>

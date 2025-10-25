@@ -18,12 +18,11 @@ namespace Connector.ViewModels
         public IRelayCommand ToggleLeftPanel { get; }
         public LeftPanelViewModel(Action clickAddButton)
         {
+            IsHidden = false;
             AddBasicItem = new RelayCommand(() =>
             {
                 clickAddButton?.Invoke();
             });
-            IsHidden = false;
-
             ToggleLeftPanel = new RelayCommand(() =>
             {
                 SwapVisibility();
