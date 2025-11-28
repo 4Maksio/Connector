@@ -73,8 +73,6 @@ namespace Connector.ViewModels
         [RelayCommand]
         private async Task OpenDialog(ObservableItem item)
         {
-            string tmpName = item.Name;
-            item.Name = "Dedicated to trash";
             if(DialogViewModel.IsOpen)
                 return;
             TaskCompletionSource<bool> awaitingConfirmation = new TaskCompletionSource<bool>();
@@ -86,9 +84,9 @@ namespace Connector.ViewModels
             {
                 removeRelations(item);
                 ObservableItems.Remove(item);
+                if (SelectedSource != null && SelectedSource.Equals(item))  // Jeśli łączenie jest w toku
+                    Connect(item);                                          // Samopołączenie resetuje proces łączenia
             }
-            else
-                item.Name = tmpName;
         }
 
         private bool validateRelation(ObservableItem source, ObservableItem target)
