@@ -82,10 +82,10 @@ namespace Connector.ViewModels
             bool result = await awaitingConfirmation.Task;
             if (result)
             {
-                removeRelations(item);
-                ObservableItems.Remove(item);
                 if (SelectedSource != null && SelectedSource.Equals(item))  // Jeśli łączenie jest w toku
                     Connect(item);                                          // Samopołączenie resetuje proces łączenia
+                removeRelations(item);
+                ObservableItems.Remove(item);
             }
         }
 
