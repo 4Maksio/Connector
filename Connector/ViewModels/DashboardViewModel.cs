@@ -18,7 +18,7 @@ namespace Connector.ViewModels
         private ViewModelBase _canva = new CanvaViewModel();
         public DashboardViewModel()
         {
-            LeftPanel = new LeftPanelViewModel(((CanvaViewModel)Canva).AddBasicItem);
+            LeftPanel = new LeftPanelViewModel(((CanvaViewModel)Canva).AddClassItem);
         }
     }
 }

@@ -10,9 +10,13 @@ namespace Connector.Models
     internal partial class ObservableItem : BasicItem
     {
         [ObservableProperty] bool _isActive;
-        public ObservableItem() : base()
+        [ObservableProperty] double _x;
+        [ObservableProperty] double _y;
+        public ObservableItem(string type) : base(type)
         {
             IsActive = false;
+            X = 0;
+            Y = 0;
         }
     }
 }

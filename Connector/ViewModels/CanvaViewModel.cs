@@ -25,7 +25,14 @@ namespace Connector.ViewModels
         [RelayCommand]
         internal void AddBasicItem()
         {
-            ObservableItems.Add(new ObservableItem
+            ObservableItems.Add(new ObservableItem("basic")
+            {
+            });
+        }
+        [RelayCommand]
+        internal void AddClassItem()
+        {
+            ObservableItems.Add(new ObservableItem("class")
             {
             });
         }
