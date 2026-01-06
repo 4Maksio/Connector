@@ -13,8 +13,38 @@
 			<Separator Margin="0 5 0 -5"/>
 			<Button Classes="navigation" Command="{Binding AddBasicItem}">
 				<StackPanel Orientation="Horizontal">
-					<Image Classes="control" Source="{SvgImage /Assets/Images/Add-Object.svg}"/>
-					<Label Content="Dodaj element" Classes.hidden="{Binding IsHidden}" Classes="animated"/>
+					<Image Classes="control" Source="{SvgImage /Assets/Images/M+.svg}"/>
+					<Label Content="Moduł" Classes.hidden="{Binding IsHidden}" Classes="animated"/>
+				</StackPanel>
+			</Button>
+			<Button Classes="navigation" Command="{Binding AddBasicItem}">
+				<StackPanel Orientation="Horizontal">
+					<Image Classes="control" Source="{SvgImage /Assets/Images/NS+.svg}"/>
+					<Label Content="Przestrzeń nazw" Classes.hidden="{Binding IsHidden}" Classes="animated"/>
+				</StackPanel>
+			</Button>
+			<Button Classes="navigation" Command="{Binding AddBasicItem}">
+				<StackPanel Orientation="Horizontal">
+					<Image Classes="control" Source="{SvgImage /Assets/Images/I+.svg}"/>
+					<Label Content="Interfejs" Classes.hidden="{Binding IsHidden}" Classes="animated"/>
+				</StackPanel>
+			</Button>
+			<Button Classes="navigation" Command="{Binding AddBasicItem}">
+				<StackPanel Orientation="Horizontal">
+					<Image Classes="control" Source="{SvgImage /Assets/Images/C+.svg}"/>
+					<Label Content="Klasa" Classes.hidden="{Binding IsHidden}" Classes="animated"/>
+				</StackPanel>
+			</Button>
+			<Button Classes="navigation" Command="{Binding AddBasicItem}">
+				<StackPanel Orientation="Horizontal">
+					<Image Classes="control" Source="{SvgImage /Assets/Images/F+.svg}"/>
+					<Label Content="Funkcja" Classes.hidden="{Binding IsHidden}" Classes="animated"/>
+				</StackPanel>
+			</Button>
+			<Button Classes="navigation" Command="{Binding AddBasicItem}">
+				<StackPanel Orientation="Horizontal">
+					<Image Classes="control" Source="{SvgImage /Assets/Images/V+.svg}"/>
+					<Label Content="Zmienna" Classes.hidden="{Binding IsHidden}" Classes="animated"/>
 				</StackPanel>
 			</Button>
 		</StackPanel>

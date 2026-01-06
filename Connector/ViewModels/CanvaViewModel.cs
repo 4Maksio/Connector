@@ -19,22 +19,17 @@ namespace Connector.ViewModels
         [ObservableProperty] private ObservableCollection<Relation> _relations = [];
         [ObservableProperty] private ObservableItem? _selectedSource;
         [ObservableProperty] private bool _isConnecting;
-
         [ObservableProperty] private int _connectCount = 0;
 
         [RelayCommand]
         internal void AddBasicItem()
         {
-            ObservableItems.Add(new ObservableItem("basic")
-            {
-            });
+            ObservableItems.Add(new ObservableItem("basic"));
         }
         [RelayCommand]
         internal void AddClassItem()
         {
-            ObservableItems.Add(new ObservableItem("klasa", description:"To jest przykładowy opis klasy.", children:[new ObservableItem("funkcja", description:"To jest przykładowy opis funkcji.")])
-            {
-            });
+            ObservableItems.Add(new ObservableItem("klasa", description:"To jest przykładowy opis klasy.", children:[new ObservableItem("funkcja", description:"To jest przykładowy opis funkcji.")]));
         }
         [RelayCommand]
         internal void Connect(ObservableItem item)
@@ -70,7 +65,7 @@ namespace Connector.ViewModels
             }
         }
 
-        public void CreateRelation(ref ObservableItem source, ref ObservableItem target, string type)
+        private void CreateRelation(ref ObservableItem source, ref ObservableItem target, string type)
         {
             if (source == null || target == null) return;
             Relations.Add(new Relation(source, target, type));
