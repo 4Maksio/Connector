@@ -32,7 +32,7 @@ namespace Connector.ViewModels
         [RelayCommand]
         internal void AddClassItem()
         {
-            ObservableItems.Add(new ObservableItem("class")
+            ObservableItems.Add(new ObservableItem("klasa", description:"To jest przykładowy opis klasy.", children:[new ObservableItem("funkcja", description:"To jest przykładowy opis funkcji.")])
             {
             });
         }

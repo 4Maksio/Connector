@@ -80,13 +80,17 @@
 	<Style Selector="Border.object">
 		<Setter Property="Background" Value="{DynamicResource ResourceKey=Gradient-Light}"/>
 		<Setter Property="CornerRadius" Value="8"/>
-		<Setter Property="MinHeight" Value="100"/>
 		<Setter Property="MaxWidth" Value="500"/>
 		<Setter Property="BoxShadow" Value="4 4 12 0 Gray"/>
 	</Style>
 	
 	<Style Selector="Border.klasa">
 		<Setter Property="Background" Value="#F0E099"/>
+		<Setter Property="CornerRadius" Value="8 8 0 0"/>
+	</Style>
+	
+	<Style Selector="Border.funkcja">
+		<Setter Property="Background" Value="#9999F0"/>
 		<Setter Property="CornerRadius" Value="8 8 0 0"/>
 	</Style>
 

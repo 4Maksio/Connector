@@ -12,7 +12,17 @@ namespace Connector.Models
         [ObservableProperty] bool _isActive;
         [ObservableProperty] double _x;
         [ObservableProperty] double _y;
-        public ObservableItem(string type) : base(type)
+        public IEnumerable<string> ChildrenNames => Children.Select(c => c.Name);
+        public IEnumerable<string> ChildrenDescriptions => Children.Select(c => c.Description);
+        public IEnumerable<string> ChildrenItemTypes => Children.Select(c => c.ItemType);
+        public ObservableItem(
+            string itemType,
+            string name = "Item",
+            string description = "Lorem Ipsum",
+            BasicItem[] children = null!,
+            string[] docs = null!,
+            string[] testArtifacts = null!
+        ) : base( itemType, name, description, children, docs, testArtifacts)
         {
             IsActive = false;
             X = 0;

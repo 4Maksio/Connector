@@ -1,4 +1,5 @@
 ﻿using Avalonia;
+using Avalonia.Controls.Shapes;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
@@ -10,23 +11,34 @@ namespace Connector.Models
 {
     internal partial class BasicItem : ObservableObject
     {
-        [ObservableProperty]private string _name;
+        [ObservableProperty] string _name;
         [ObservableProperty] string _description;
         [ObservableProperty] string[] _docs;
         [ObservableProperty] string[] _testArtifacts;
         [ObservableProperty] BasicItem[] _children;
-        private string _type;
+        public readonly string _itemType;
 
-        public string Type => _type;
-
-        public BasicItem(string type)
+        public string ItemType
         {
-            Name = "Item";
-            _type = type;
-            Description = "Lorem Ipsum dolor sit ament. Set solom nut kente lepanto nutrina.";
-            Children = [];
-            Docs = ["https://www.atlassian.com/software/confluence", "https://www.figma.com/"];
-            TestArtifacts = ["https://www.atlassian.com/pl/software/jira", "https://www.testrail.com/"];
+            get { return _itemType; }
+            set { }
+        }
+
+        public BasicItem(
+            string itemType,
+            string name = "Item",
+            string description = "Lorem Ipsum",
+            BasicItem[] children = null!,
+            string[] docs = null!,
+            string[] testArtifacts = null!
+            )
+        {
+            _itemType = itemType;
+            Name = name;
+            Description = description;
+            Children = children ?? [];
+            Docs = docs ?? ["https://www.atlassian.com/software/confluence", "https://www.figma.com/"];
+            TestArtifacts = testArtifacts ?? ["https://www.atlassian.com/pl/software/jira", "https://www.testrail.com/"];
         }
     }
 }

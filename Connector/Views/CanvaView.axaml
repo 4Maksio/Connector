@@ -12,7 +12,7 @@
 					<Border Classes="object" Margin="10" Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}">
 						<Grid RowDefinitions="auto auto auto auto *" Grid.ColumnDefinitions="50 * 200" Background="Transparent">
 							<Border Grid.Column="0" Classes="klasa" Grid.ColumnSpan="3">
-								<TextBlock Text="{Binding Type}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+								<TextBlock Text="{Binding ItemType}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 							</Border>
 							<TextBlock Grid.Column="0" Grid.Row="1" Classes="label" Text="Nazwa"/>
 							<TextBlock Grid.Column="1" Grid.Row="1" Classes="name" Text="{Binding Name}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -33,7 +33,7 @@
 							<TextBlock Grid.Column="1" Grid.Row="2" Classes="p10" Text="{Binding Description}" HorizontalAlignment="Stretch" TextWrapping="Wrap" Grid.RowSpan="2"/>
 							<Border Grid.Column="2" Grid.Row="2" Classes="link">
 								<StackPanel>
-									<ItemsControl Grid.Column="2" Grid.Row="2" ItemsSource="{Binding Docs}" HorizontalAlignment="Stretch">
+									<ItemsControl ItemsSource="{Binding Docs}" HorizontalAlignment="Stretch">
 										<ItemsControl.ItemTemplate>
 											<DataTemplate>
 												<TextBlock Classes="link" Text="{Binding}" TextWrapping="Wrap"/>
@@ -44,7 +44,7 @@
 							</Border>
 							<Border Grid.Column="2" Grid.Row="3" Classes="link">
 								<StackPanel>
-									<ItemsControl Grid.Column="2" Grid.Row="2" ItemsSource="{Binding TestArtifacts}" HorizontalAlignment="Stretch">
+									<ItemsControl ItemsSource="{Binding TestArtifacts}" HorizontalAlignment="Stretch">
 										<ItemsControl.ItemTemplate>
 											<DataTemplate>
 												<TextBlock Classes="link" Text="{Binding}" TextWrapping="Wrap"/>
@@ -53,7 +53,33 @@
 									</ItemsControl>
 								</StackPanel>
 							</Border>
-							<TextBlock Grid.Column="0" Grid.Row="4" Text="Children" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="3"/>
+							<Border Grid.Column="0" Grid.Row="4" Classes="object" HorizontalAlignment="Stretch" Grid.ColumnSpan="3" Margin="15 10 15 10">
+								<StackPanel>
+									<ItemsControl Grid.Column="2" Grid.Row="2" ItemsSource="{Binding ChildrenItemTypes}" HorizontalAlignment="Stretch">
+										<ItemsControl.ItemTemplate>
+											<DataTemplate>
+												<Border Classes="funkcja">
+													<TextBlock Text="{Binding}" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+												</Border>
+											</DataTemplate>
+										</ItemsControl.ItemTemplate>
+									</ItemsControl>
+									<ItemsControl Grid.Column="2" Grid.Row="2" ItemsSource="{Binding ChildrenNames}" HorizontalAlignment="Stretch">
+										<ItemsControl.ItemTemplate>
+											<DataTemplate>
+												<TextBlock Classes="name" Text="{Binding}" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+											</DataTemplate>
+										</ItemsControl.ItemTemplate>
+									</ItemsControl>
+									<ItemsControl Grid.Column="2" Grid.Row="2" ItemsSource="{Binding ChildrenDescriptions}" HorizontalAlignment="Stretch">
+										<ItemsControl.ItemTemplate>
+											<DataTemplate>
+												<TextBlock Text="{Binding}" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+											</DataTemplate>
+										</ItemsControl.ItemTemplate>
+									</ItemsControl>
+								</StackPanel>
+							</Border>
 						</Grid>
 					</Border>
 				</DataTemplate>
