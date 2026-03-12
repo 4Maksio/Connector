@@ -5,22 +5,88 @@
 			 xmlns:vm="using:Connector.ViewModels"
 			 x:Class="Connector.Views.CanvaView"
 			 x:DataType="vm:CanvaViewModel">
-	<StackPanel>
-		<ItemsControl ItemsSource="{Binding BasicItems}">
+	<Canvas Margin="10">
+		<ItemsControl ItemsSource="{Binding ObservableItems}">
 			<ItemsControl.ItemTemplate>
 				<DataTemplate>
-					<Border Classes="object" Margin="10" Height="50">
-						<Grid RowDefinitions="auto *" ColumnDefinitions="* auto" Background="Transparent">
-							<TextBlock Grid.Column="0" Text="{Binding Name}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-							<Button Grid.Column="1" Classes="navigation"
-                                    Command="{Binding $parent[UserControl].DataContext.OpenDialogCommand}"
-                                    CommandParameter="{Binding}">
-								<Image Classes="control" Source="{SvgImage /Assets/Images/Trash.svg}"/>
-							</Button>
+					<Border Classes="object" Margin="10" Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}">
+						<Grid RowDefinitions="auto auto auto auto *" Grid.ColumnDefinitions="50 * 200" Background="Transparent">
+							<Border Grid.Column="0" Classes="klasa" Grid.ColumnSpan="3">
+								<TextBlock Text="{Binding ItemType}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+							</Border>
+							<TextBlock Grid.Column="0" Grid.Row="1" Classes="label" Text="Nazwa"/>
+							<TextBlock Grid.Column="1" Grid.Row="1" Classes="name" Text="{Binding Name}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+							<StackPanel Grid.Column="2" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+								<Button Classes.active-button="{Binding IsActive}"
+										Classes="in-card"
+										Command="{Binding $parent[UserControl].DataContext.ConnectCommand}"
+										CommandParameter="{Binding}">
+									<Image Classes="control" Source="{SvgImage /Assets/Images/Connect-Object.svg}"/>
+								</Button>
+								<Button Classes="in-card"
+										Command="{Binding $parent[UserControl].DataContext.OpenDialogCommand}"
+										CommandParameter="{Binding}">
+									<Image Classes="control" Source="{SvgImage /Assets/Images/Trash.svg}"/>
+								</Button>
+							</StackPanel>
+							<TextBlock Grid.Column="0" Grid.Row="2" Classes="label" Text="Opis" Grid.RowSpan="2"/>
+							<TextBlock Grid.Column="1" Grid.Row="2" Classes="p10" Text="{Binding Description}" HorizontalAlignment="Stretch" TextWrapping="Wrap" Grid.RowSpan="2"/>
+							<Border Grid.Column="2" Grid.Row="2" Classes="link">
+								<StackPanel>
+									<ItemsControl ItemsSource="{Binding Docs}" HorizontalAlignment="Stretch">
+										<ItemsControl.ItemTemplate>
+											<DataTemplate>
+												<TextBlock Classes="link" Text="{Binding}" TextWrapping="Wrap"/>
+											</DataTemplate>
+										</ItemsControl.ItemTemplate>
+									</ItemsControl>
+								</StackPanel>
+							</Border>
+							<Border Grid.Column="2" Grid.Row="3" Classes="link">
+								<StackPanel>
+									<ItemsControl ItemsSource="{Binding TestArtifacts}" HorizontalAlignment="Stretch">
+										<ItemsControl.ItemTemplate>
+											<DataTemplate>
+												<TextBlock Classes="link" Text="{Binding}" TextWrapping="Wrap"/>
+											</DataTemplate>
+										</ItemsControl.ItemTemplate>
+									</ItemsControl>
+								</StackPanel>
+							</Border>
+							<Border Grid.Column="0" Grid.Row="4" Classes="object" HorizontalAlignment="Stretch" Grid.ColumnSpan="3" Margin="15 10 15 10">
+								<StackPanel>
+									<ItemsControl Grid.Column="2" Grid.Row="2" ItemsSource="{Binding ChildrenItemTypes}" HorizontalAlignment="Stretch">
+										<ItemsControl.ItemTemplate>
+											<DataTemplate>
+												<Border Classes="funkcja">
+													<TextBlock Text="{Binding}" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+												</Border>
+											</DataTemplate>
+										</ItemsControl.ItemTemplate>
+									</ItemsControl>
+									<ItemsControl Grid.Column="2" Grid.Row="2" ItemsSource="{Binding ChildrenNames}" HorizontalAlignment="Stretch">
+										<ItemsControl.ItemTemplate>
+											<DataTemplate>
+												<TextBlock Classes="name" Text="{Binding}" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+											</DataTemplate>
+										</ItemsControl.ItemTemplate>
+									</ItemsControl>
+									<ItemsControl Grid.Column="2" Grid.Row="2" ItemsSource="{Binding ChildrenDescriptions}" HorizontalAlignment="Stretch">
+										<ItemsControl.ItemTemplate>
+											<DataTemplate>
+												<TextBlock Text="{Binding}" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+											</DataTemplate>
+										</ItemsControl.ItemTemplate>
+									</ItemsControl>
+								</StackPanel>
+							</Border>
 						</Grid>
 					</Border>
 				</DataTemplate>
 			</ItemsControl.ItemTemplate>
 		</ItemsControl>
-	</StackPanel>
+		<Border Canvas.Right="0" Canvas.Bottom="0">
+			<Label Content="{Binding ConnectCount}"/>
+		</Border>
+	</Canvas>
 </UserControl>

@@ -6,18 +6,45 @@
 			 x:Class="Connector.Views.LeftPanelView"
              x:DataType="vm:LeftPanelViewModel">
 	<Border Grid.Row="1" Classes="left-panel">
-		<StackPanel Orientation="Vertical" Spacing="2">
+		<StackPanel Spacing="2">
+			<Button Classes="navigation" Command="{Binding ToggleLeftPanel}">
+				<Image Classes="control" Source="{SvgImage /Assets/Images/Sidebar-Toggle.svg}"/>
+			</Button>
+			<Separator Margin="0 5 0 -5"/>
 			<Button Classes="navigation" Command="{Binding AddBasicItem}">
 				<StackPanel Orientation="Horizontal">
-					<Image Classes="control" Source="{SvgImage /Assets/Images/Add-Object.svg}"/>
-					<Label Content="Dodaj element" Classes.hidden="{Binding IsHidden}">
-						<Label.Transitions>
-							<Transitions>
-								<DoubleTransition Property="MaxWidth" Duration="0:0:0.3"/>
-								<DoubleTransition Property="Opacity" Duration="0:0:0.3"/>
-							</Transitions>
-						</Label.Transitions>
-					</Label>
+					<Image Classes="control" Source="{SvgImage /Assets/Images/M+.svg}"/>
+					<Label Content="Moduł" Classes.hidden="{Binding IsHidden}" Classes="animated"/>
+				</StackPanel>
+			</Button>
+			<Button Classes="navigation" Command="{Binding AddBasicItem}">
+				<StackPanel Orientation="Horizontal">
+					<Image Classes="control" Source="{SvgImage /Assets/Images/NS+.svg}"/>
+					<Label Content="Przestrzeń nazw" Classes.hidden="{Binding IsHidden}" Classes="animated"/>
+				</StackPanel>
+			</Button>
+			<Button Classes="navigation" Command="{Binding AddBasicItem}">
+				<StackPanel Orientation="Horizontal">
+					<Image Classes="control" Source="{SvgImage /Assets/Images/I+.svg}"/>
+					<Label Content="Interfejs" Classes.hidden="{Binding IsHidden}" Classes="animated"/>
+				</StackPanel>
+			</Button>
+			<Button Classes="navigation" Command="{Binding AddBasicItem}">
+				<StackPanel Orientation="Horizontal">
+					<Image Classes="control" Source="{SvgImage /Assets/Images/C+.svg}"/>
+					<Label Content="Klasa" Classes.hidden="{Binding IsHidden}" Classes="animated"/>
+				</StackPanel>
+			</Button>
+			<Button Classes="navigation" Command="{Binding AddBasicItem}">
+				<StackPanel Orientation="Horizontal">
+					<Image Classes="control" Source="{SvgImage /Assets/Images/F+.svg}"/>
+					<Label Content="Funkcja" Classes.hidden="{Binding IsHidden}" Classes="animated"/>
+				</StackPanel>
+			</Button>
+			<Button Classes="navigation" Command="{Binding AddBasicItem}">
+				<StackPanel Orientation="Horizontal">
+					<Image Classes="control" Source="{SvgImage /Assets/Images/V+.svg}"/>
+					<Label Content="Zmienna" Classes.hidden="{Binding IsHidden}" Classes="animated"/>
 				</StackPanel>
 			</Button>
 		</StackPanel>

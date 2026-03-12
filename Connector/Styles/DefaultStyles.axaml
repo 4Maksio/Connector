@@ -1,11 +1,19 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Design.PreviewWith>
-	  <Grid RowDefinitions="* auto" ColumnDefinitions="* *">
-		  <Label Grid.ColumnSpan="2" Content="Name"/>
-		  <Button Classes="dialog" Grid.Row="1" Content="Potwierdź"/>
-		  <Button Classes="dialog" Grid.Column="1" Grid.Row="1" Content="Anuluj"/>
-	  </Grid>
+	  <Border Classes="object" Margin="10" Height="50">
+		  <Grid RowDefinitions="auto *" ColumnDefinitions="* auto" Background="Transparent">
+			  <TextBlock Grid.Column="0" Text="Name" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+			  <StackPanel Grid.Column="1" Orientation="Horizontal">
+				  <Button Classes="in-card active-button">
+					  <Image Classes="control" Source="{SvgImage /Assets/Images/Connect-Object.svg}"/>
+				  </Button>
+				  <Button Classes="in-card">
+					  <Image Classes="control" Source="{SvgImage /Assets/Images/Trash.svg}"/>
+				  </Button>
+			  </StackPanel>
+		  </Grid>
+	  </Border>
   </Design.PreviewWith>
 
 	<Style Selector="Window">
@@ -29,11 +37,21 @@
 		<Setter Property="VerticalAlignment" Value="Center"/>
 	</Style>
 
-	<Style Selector="Button.navigation">
+	<Style Selector="Image.logo-page">
+		<Setter Property="Height" Value="26"/>
 		<Setter Property="Margin" Value="10"/>
+	</Style>
+	
+	<Style Selector="Button.navigation">
+		<Setter Property="Margin" Value="10 10 10 0"/>
 		<Setter Property="Padding" Value="4"/>
 	</Style>
 
+	<Style Selector="Button.in-card">
+		<Setter Property="Margin" Value="5 10 5 0"/>
+		<Setter Property="Padding" Value="2"/>
+	</Style>
+	
 	<Style Selector="Image.control">
 		<Setter Property="Height" Value="24"/>
 	</Style>
@@ -61,37 +79,79 @@
 
 	<Style Selector="Border.object">
 		<Setter Property="Background" Value="{DynamicResource ResourceKey=Gradient-Light}"/>
-		<Setter Property="BorderBrush" Value="Beige"/>
-		<Setter Property="BorderThickness" Value="1"/>
 		<Setter Property="CornerRadius" Value="8"/>
-		<Setter Property="MinHeight" Value="100"/>
-		<Setter Property="MaxWidth" Value="250"/>
+		<Setter Property="MaxWidth" Value="500"/>
 		<Setter Property="BoxShadow" Value="4 4 12 0 Gray"/>
+	</Style>
+	
+	<Style Selector="Border.klasa">
+		<Setter Property="Background" Value="#F0E099"/>
+		<Setter Property="CornerRadius" Value="8 8 0 0"/>
+	</Style>
+	
+	<Style Selector="Border.funkcja">
+		<Setter Property="Background" Value="#9999F0"/>
+		<Setter Property="CornerRadius" Value="8 8 0 0"/>
+	</Style>
+
+	<Style Selector="TextBlock.link">
+		<Setter Property="Padding" Value="0 0 0 2"/>
+		<Setter Property="TextElement.Foreground" Value="#5566FF"/>
+	</Style>
+	
+	<Style Selector="Border.link">
+		<Setter Property="Padding" Value="0 5 0 5"/>
+	</Style>
+
+	<Style Selector="TextBlock.p10">
+		<Setter Property="Padding" Value="10"/>
+	</Style>
+
+	<Style Selector="TextBlock.label">
+		<Setter Property="HorizontalAlignment" Value="Center"/>
+		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="TextElement.Foreground" Value="Gray"/>
+	</Style>
+
+	<Style Selector="TextBlock.name">
+		<Setter Property="FontSize" Value="24"/>
 	</Style>
 
 	<Style Selector="Label.hidden">
-		<Setter Property="MaxWidth" Value="0"/>
+		<Setter Property="Width" Value="0"/>
 		<Setter Property="Opacity" Value="0"/>
 	</Style>
 
 	<Style Selector="Label:not(.hidden)">
-		<Setter Property="MaxWidth" Value="200"/>
+		<Setter Property="Width" Value="120"/>
 		<Setter Property="Opacity" Value="1"/>
-	</Style>
-
-	<Style Selector="Button.dialog">
-		<Setter Property="HorizontalAlignment" Value="Center"/>
-		<Setter Property="VerticalAlignment" Value="Center"/>
-	</Style>
-
-	<Style Selector="Button.dialog, Label.dialog">
-		<Setter Property="HorizontalAlignment" Value="Center"/>
-		<Setter Property="VerticalAlignment" Value="Center"/>
 	</Style>
 
 	<Style Selector="Button.dialog">
 		<Setter Property="Margin" Value="0 5 0 5"/>
 		<Setter Property="Width" Value="100"/>
 	</Style>
+
+	<Style Selector="Button.dialog, Label.dialog">
+		<Setter Property="HorizontalAlignment" Value="Center"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalAlignment" Value="Center"/>
+	</Style>
 	
+	<Style Selector="Label.animated">
+		<Setter Property="Transitions">
+			<Transitions>
+				<DoubleTransition Property="Width" Duration="0:0:0.2"/>
+				<DoubleTransition Property="Opacity" Duration="0:0:0.2"/>
+			</Transitions>
+		</Setter>
+	</Style>
+	
+	<Style Selector="Button.active-button">
+		<Setter Property="BorderBrush" Value="#000087"/>
+		<Setter Property="BorderThickness" Value="2"/>
+		<Setter Property="Padding" Value="0"/>
+		<Setter Property="Background" Value="{DynamicResource ResourceKey=Background}"/>
+	</Style>
+
 </Styles>

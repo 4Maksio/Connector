@@ -13,13 +13,12 @@ namespace Connector.ViewModels
         [ObservableProperty]
         private ViewModelBase _leftPanel;
         [ObservableProperty]
-        private ViewModelBase _topBar;
+        private ViewModelBase _topBar = new TopBarViewModel();
         [ObservableProperty]
         private ViewModelBase _canva = new CanvaViewModel();
         public DashboardViewModel()
         {
-            LeftPanel = new LeftPanelViewModel(((CanvaViewModel)Canva).AddBasicItem);
-            TopBar = new TopBarViewModel(((LeftPanelViewModel)LeftPanel).SwapVisibility);
+            LeftPanel = new LeftPanelViewModel(((CanvaViewModel)Canva).AddClassItem);
         }
     }
 }

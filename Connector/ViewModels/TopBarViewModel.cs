@@ -10,13 +10,5 @@ namespace Connector.ViewModels
 {
     internal class TopBarViewModel : ViewModelBase
     {
-        public IRelayCommand ToggleLeftPanel { get; }
-        public TopBarViewModel(Action toggleLeftPanelVisibility)
-        {
-            ToggleLeftPanel = new RelayCommand(() =>
-            {
-                toggleLeftPanelVisibility?.Invoke();
-            });
-        }
     }
 }
