@@ -41,7 +41,7 @@ Instalator **win-x64**: [ConnectorSetup(0.0.1)](https://github.com/4Maksio/Conne
 | 18 | Integracja z platformami t.j. TestRail, Jira, YouTrack |
 | 19 | Mapowanie z kodu |
 
-## Obecne zadanie - 
+## Obecne zadanie - Różnorodność obiektów
 
 ### Historyjka użytkownika
 
